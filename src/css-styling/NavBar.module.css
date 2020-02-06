@@ -1,0 +1,22 @@
+.navbar {
+  background-color: #e8e7e7;
+  width: 100%;
+  height: 70px;
+}
+
+.navbar :hover {
+  color: #f50898;
+}
+
+.navbar li {
+  float: left;
+  padding: 20px;
+  list-style-type: none;
+  font-family: "Raleway", sans-serif;
+  color: navy;
+  font-size: 20px;
+}
+
+ul {
+  margin: 0;
+}
