@@ -1,4 +1,30 @@
-.card {
+.article_card {
   font-family: "Raleway", sans-serif;
-  color: black;
+  border-style: solid;
 }
+
+/* border-radius: 5px;
+  padding: 20px; */
+/* display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 10px; */
+
+/* border: none;
+  background-color: #e8e7e7; */
+/* display: flex;
+  justify-content: space-between; */
+
+/* height: 250px;
+  width: 30%;
+  display: inline-block;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 20px;
+  top: 50%; */
+
+/* transition: all 0.125s;
+  transform: scale(1) translateY(0px);
+  
+  margin-top: calc((100vh - 506px) / 2);
+  
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.2); */

@@ -1,4 +1,5 @@
-homepage {
-  display: grid;
-  background-color: green;
+.homepage_header {
+  font-family: "Raleway", sans-serif;
+  color: #f50898;
+  text-align: center;
 }

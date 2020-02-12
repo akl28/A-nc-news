@@ -13,10 +13,10 @@
   padding: 20px;
   list-style-type: none;
   font-family: "Raleway", sans-serif;
-  color: navy;
   font-size: 20px;
 }
 
-ul {
+/* this makes nav bar have no white space at top */
+.ul {
   margin: 0;
 }

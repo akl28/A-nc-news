@@ -5,7 +5,7 @@ import styles from "../css-styling/HomePage.module.css";
 const Homepage = () => {
   return (
     <div>
-      <h2>Homepage</h2>
+      <h2 className={styles.homepage_header}>Latest News</h2>
       <main className={styles.homepage}>
         <ArticlesList />
       </main>

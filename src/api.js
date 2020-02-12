@@ -18,23 +18,20 @@ export const getArticleByID = article_id => {
     return data.article;
   });
 };
-// const getAllTopics = () => {
-//   return axios
-//     .get(`${baseURL}/topics`)
-//     .then(({ data }) => {
-//       return data.topics;
-//     });
-// };
 
-// export const getArticles = (topic, sort_by, order_by) => {
-//   // const endpoint = topic ? "?topic_slug=${topic}" : "";
-//   return Axios.get("urlhere/api/topic", {
-//     params: {
-//       topic_slug: topic,
-//       sort_by: sort_by,
-//       order_by: order_by
-//     }
-//   }).then(() => {
-//     return data.articles;
-//   });
+export const getCommentsByArticleID = article_id => {
+  return axios
+    .get(`${baseURL}/articles/${article_id}/comments`)
+    .then(({ data }) => {
+      return data.comments;
+    });
+};
+
+// export const postCommentByArticleID = (article_id, comment) => {
+//   return axios
+//     .post(`${baseURL}/articles/${article_id}/comments`, comment)
+//     .then(({ data }) => {
+//       console.log(data, "data <<<<<");
+//       return data.comment;
+//     });
 // };
