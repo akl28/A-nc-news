@@ -1,6 +1,7 @@
 import React from "react";
 // import ErrorComponent from "./ErrorComponent";
 import CommentCard from "./CommentCard";
+import * as api from "../../api";
 import { getCommentsByArticleID } from "../../api";
 import NewComment from "../Comments/NewComment";
 
@@ -20,7 +21,14 @@ class CommentList extends React.Component {
         <h3>Discussion</h3>
         <ul>
           {comments.map(comment => {
-            return <CommentCard key={comment.comment_id} comment={comment} />;
+            return (
+              <CommentCard
+                key={comment.comment_id}
+                user={this.props.user}
+                comment={comment}
+                deleteComment={this.deleteComment}
+              />
+            );
           })}
         </ul>
       </section>
@@ -31,6 +39,15 @@ class CommentList extends React.Component {
     this.setState(currentState => {
       return { comments: [newComment, ...currentState.comments] };
     });
+  };
+
+  deleteComment = comment_id => {
+    const { comments } = this.state;
+    api.deleteCommentByID(comment_id).catch(err => console.dir(err));
+    const filteredComments = comments.filter(
+      comment => comment.comment_id !== comment_id
+    );
+    this.setState({ comments: filteredComments });
   };
 
   componentDidMount() {

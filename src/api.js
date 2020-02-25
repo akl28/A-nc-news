@@ -27,7 +27,6 @@ export const getCommentsByArticleID = article_id => {
     });
 };
 
-// post comment function
 export const postComment = (article_id, comment, user) => {
   return axios
     .post(`${baseURL}/articles/${article_id}/comments`, {
@@ -38,4 +37,8 @@ export const postComment = (article_id, comment, user) => {
       console.log(data.comment, "<<<<<<<");
       return data.comment;
     });
+};
+
+export const deleteCommentByID = comment_id => {
+  return axios.delete(`${baseURL}/comments/${comment_id}`);
 };
