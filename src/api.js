@@ -42,3 +42,15 @@ export const postComment = (article_id, comment, user) => {
 export const deleteCommentByID = comment_id => {
   return axios.delete(`${baseURL}/comments/${comment_id}`);
 };
+
+export const patchVotesByCommentID = (comment_id, increment_by) => {
+  return axios.patch(`${baseURL}/comments/${comment_id}`, {
+    inc_votes: increment_by
+  });
+};
+
+export const patchVotesByArticleID = (article_id, increment_by) => {
+  return axios.patch(`${baseURL}/articles/${article_id}`, {
+    inc_votes: increment_by
+  });
+};

@@ -43,7 +43,7 @@ class CommentList extends React.Component {
 
   deleteComment = comment_id => {
     const { comments } = this.state;
-    api.deleteCommentByID(comment_id).catch(err => console.dir(err));
+    api.deleteCommentByID(comment_id).catch(err => this.setState({ err }));
     const filteredComments = comments.filter(
       comment => comment.comment_id !== comment_id
     );
