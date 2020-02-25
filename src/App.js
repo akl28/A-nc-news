@@ -13,11 +13,16 @@ class App extends React.Component {
     user: "jessjelly",
     users: ["jessjelly", "tickle122", "cooljmessy", "weegembump"]
   };
+
+  selectUser = user => {
+    this.setState({ user: user });
+  };
+
   render() {
     const { user, users } = this.state;
     return (
       <div>
-        <NavBar />
+        <NavBar selectUser={this.selectUser} user={user} users={users} />
         <Header />
         <Router>
           <Homepage path="/" />

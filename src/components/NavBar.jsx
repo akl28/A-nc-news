@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "@reach/router";
 import styles from "../css-styling/NavBar.module.css";
 
-const NavBar = props => {
+const NavBar = ({ user, users, selectUser }) => {
   return (
     <main>
       <nav className={styles.navbar}>
@@ -30,6 +30,17 @@ const NavBar = props => {
           </li>
         </ul>
       </nav>
+      <section>
+        <p>Logged in: {user}</p>
+        <p>
+          Select User:
+          <select onChange={({ target: { value } }) => selectUser(value)}>
+            {users.map(user => {
+              return <option key={user}>{user}</option>;
+            })}
+          </select>
+        </p>
+      </section>
     </main>
   );
 };

@@ -1,13 +1,22 @@
 import React from "react";
 import * as api from "../../api";
 import ArticleCard from "./ArticleCard";
+import Sorting from "../Sorting";
 
 class ArticlesList extends React.Component {
-  state = { articles: [], isLoading: true };
+  state = {
+    articles: [],
+    sort_by: "created_at",
+    order: "desc",
+    isLoading: true,
+    err: null
+  };
   render() {
+    // console.log(this.props, "<<<");
     if (this.state.isLoading) return <p>Loading...</p>;
     return (
       <div>
+        <Sorting sortArticles={this.sortArticles} />
         <ul>
           {this.state.articles.map(article => {
             return <ArticleCard key={article.article_id} article={article} />;
@@ -17,29 +26,37 @@ class ArticlesList extends React.Component {
     );
   }
 
+  sortArticles = (sort_by, order) => {
+    this.setState({ sort_by, order });
+  };
+
   componentDidMount() {
     this.fetchArticles();
   }
 
-  componentDidUpdate(prevProps) {
-    if (prevProps.topic !== this.props.topic) {
+  componentDidUpdate(prevProps, prevState) {
+    const { sort_by, order } = this.state;
+    const { topic } = this.props;
+    const changeTopic = prevProps.topic !== topic;
+    const changeSort = sort_by !== prevState.sort_by;
+    const changeOrder = order !== prevState.order;
+    if (changeTopic || changeSort || changeOrder) {
       this.fetchArticles();
     }
   }
 
   fetchArticles = () => {
-    // where is props coming from below?? -> ArticlesList has TWO parents. It is being called in homepage with no props getting passed down as we want ALL topics. It is also being called in TopicsPage where topic is getting passed on props down here as we only want to see what articles from a certain topic
-    api.getArticles(this.props.topic).then(articles => {
-      this.setState({ articles: articles, isLoading: false });
-    });
+    const { sort_by, order } = this.state;
+    const { topic, author } = this.props;
+    api
+      .getArticles(topic, author, sort_by, order)
+      .then(articles => {
+        this.setState({ articles: articles, isLoading: false, err: false });
+      })
+      .catch(err => {
+        this.setState({ isLoading: false, err: err.response });
+      });
   };
 }
 
 export default ArticlesList;
-
-/* <li key={article.article_id}>
-  <h3>{article.title}</h3>
-  <p>Author: {article.author}</p>
-  <p>Topic: {article.topic}</p>
-  <p>Created at: {article.created_at}</p>
-</li>; */
