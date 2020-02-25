@@ -5,23 +5,30 @@ import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import Homepage from "./components/Homepage";
 import TopicsPage from "./components/TopicsPage";
-import SingleArticle from "./components/SingleArticle";
+import SingleArticle from "./components/Articles/SingleArticle";
 import ErrorComponent from "./components/ErrorComponent";
 
-const App = () => {
-  return (
-    <div>
-      <NavBar />
-      <Header />
-      <Router>
-        <Homepage path="/" />
-        <TopicsPage path="/articles/:topic" />
-        <SingleArticle path="/articles/id/:article_id" />
-        <ErrorComponent path="/*" />
-      </Router>
-    </div>
-  );
-};
+class App extends React.Component {
+  state = {
+    user: "jessjelly",
+    users: ["jessjelly", "tickle122", "cooljmessy", "weegembump"]
+  };
+  render() {
+    const { user, users } = this.state;
+    return (
+      <div>
+        <NavBar />
+        <Header />
+        <Router>
+          <Homepage path="/" />
+          <TopicsPage path="/articles/:topic" />
+          <SingleArticle user={user} path="/articles/id/:article_id" />
+          <ErrorComponent path="/*" />
+        </Router>
+      </div>
+    );
+  }
+}
 
 export default App;
 

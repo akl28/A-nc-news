@@ -1,5 +1,5 @@
 import React from "react";
-import ArticlesList from "../components/ArticlesList";
+import ArticlesList from "./Articles/ArticlesList";
 import styles from "../css-styling/HomePage.module.css";
 
 const Homepage = () => {

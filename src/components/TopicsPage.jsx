@@ -1,5 +1,5 @@
 import React from "react";
-import ArticlesList from "./ArticlesList";
+import ArticlesList from "./Articles/ArticlesList";
 import styles from "../css-styling/TopicsPage.module.css";
 
 const TopicsPage = ({ topic }) => {

@@ -1,21 +1,23 @@
 import React from "react";
 // import ErrorComponent from "./ErrorComponent";
 import CommentCard from "./CommentCard";
-import { getCommentsByArticleID } from "../api";
-// import AddComment from "./AddComment";
+import { getCommentsByArticleID } from "../../api";
+import NewComment from "../Comments/NewComment";
 
-class CommentPage extends React.Component {
+class CommentList extends React.Component {
   state = { comments: [], err: null, isLoading: true };
   render() {
+    // console.log(this.props);
     if (this.state.isLoading) return <p>Loading...</p>;
     const { comments } = this.state;
     return (
       <section>
-        <h3>Discussion</h3>
-        {/* <AddComment
+        <NewComment
+          user={this.props.user}
           article_id={this.props.article_id}
           addNewComment={this.addNewComment}
-        /> */}
+        />
+        <h3>Discussion</h3>
         <ul>
           {comments.map(comment => {
             return <CommentCard key={comment.comment_id} comment={comment} />;
@@ -24,6 +26,12 @@ class CommentPage extends React.Component {
       </section>
     );
   }
+
+  addNewComment = newComment => {
+    this.setState(currentState => {
+      return { comments: [newComment, ...currentState.comments] };
+    });
+  };
 
   componentDidMount() {
     getCommentsByArticleID(this.props.article_id)
@@ -34,12 +42,6 @@ class CommentPage extends React.Component {
         this.setState({ err: err.response, isLoading: false });
       });
   }
-
-  // addNewComment = newComment => {
-  //   this.setState(currentState => {
-  //     return { comments: [newComment, ...currentState.comments] };
-  //   });
-  // };
 }
 
-export default CommentPage;
+export default CommentList;

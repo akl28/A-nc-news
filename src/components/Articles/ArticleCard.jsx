@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
-import styles from "../css-styling/ArticleCard.module.css";
+import styles from "../../css-styling/ArticleCard.module.css";
 
 const ArticleCard = props => {
   return (

@@ -27,11 +27,15 @@ export const getCommentsByArticleID = article_id => {
     });
 };
 
-// export const postCommentByArticleID = (article_id, comment) => {
-//   return axios
-//     .post(`${baseURL}/articles/${article_id}/comments`, comment)
-//     .then(({ data }) => {
-//       console.log(data, "data <<<<<");
-//       return data.comment;
-//     });
-// };
+// post comment function
+export const postComment = (article_id, comment, user) => {
+  return axios
+    .post(`${baseURL}/articles/${article_id}/comments`, {
+      username: user,
+      body: comment
+    })
+    .then(({ data }) => {
+      console.log(data.comment, "<<<<<<<");
+      return data.comment;
+    });
+};
