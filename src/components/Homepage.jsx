@@ -4,12 +4,12 @@ import styles from "../css-styling/HomePage.module.css";
 
 const Homepage = () => {
   return (
-    <div>
-      <h2 className={styles.homepage_header}>Latest News</h2>
-      <main className={styles.homepage}>
+    <main>
+      <h2 className={styles.homepage_header}>HOME</h2>
+      <section className={styles.homepage}>
         <ArticlesList />
-      </main>
-    </div>
+      </section>
+    </main>
   );
 };
 

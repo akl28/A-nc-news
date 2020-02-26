@@ -7,25 +7,33 @@ const NavBar = ({ user, users, selectUser }) => {
     <main>
       <nav className={styles.navbar}>
         <ul className={styles.ul}>
+          <p className={styles.title}>COSMIC NEWS</p>
+          <img
+            src="http://clipart-library.com/images/ziXobeE7T.png"
+            height="42"
+            width="42"
+            className={styles.flower}
+            alt="flower"
+          />
           <li>
             <Link style={{ textDecoration: "none" }} to="/">
               {" "}
-              Home
+              HOME
             </Link>
           </li>
           <li>
             <Link style={{ textDecoration: "none" }} to="/articles/coding">
-              Coding
+              CODING
             </Link>
           </li>
           <li>
             <Link style={{ textDecoration: "none" }} to="/articles/cooking">
-              Cooking
+              COOKING
             </Link>
           </li>
           <li>
             <Link style={{ textDecoration: "none" }} to="/articles/football">
-              Football
+              FOOTBALL
             </Link>
           </li>
         </ul>

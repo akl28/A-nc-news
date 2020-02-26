@@ -1,7 +1,7 @@
 import React from "react";
 import { Router } from "@reach/router";
 // import "./css-styling/App.css";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import Homepage from "./components/Homepage";
 import TopicsPage from "./components/TopicsPage";
@@ -23,7 +23,7 @@ class App extends React.Component {
     return (
       <div>
         <NavBar selectUser={this.selectUser} user={user} users={users} />
-        <Header />
+        {/* <Header /> */}
         <Router>
           <Homepage path="/" />
           <TopicsPage path="/articles/:topic" />

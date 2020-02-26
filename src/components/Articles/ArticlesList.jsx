@@ -2,6 +2,7 @@ import React from "react";
 import * as api from "../../api";
 import ArticleCard from "./ArticleCard";
 import Sorting from "../Sorting";
+import styles from "../../css-styling/ArticleList.module.css";
 
 class ArticlesList extends React.Component {
   state = {
@@ -17,7 +18,7 @@ class ArticlesList extends React.Component {
     return (
       <div>
         <Sorting sortArticles={this.sortArticles} />
-        <ul>
+        <ul className={styles.eachArticle}>
           {this.state.articles.map(article => {
             return <ArticleCard key={article.article_id} article={article} />;
           })}
