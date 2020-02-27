@@ -1,13 +1,14 @@
 import React from "react";
 import Voting from "../Voting";
+import Moment from "react-moment";
 
 const CommentCard = props => {
   return (
     <section>
       <li>
-        <p>User: {props.comment.author}</p>
-        <p>Date: {props.comment.created_at}</p>
         <p>{props.comment.body}</p>
+        <p>User: {props.comment.author}</p>
+        <Moment format="D MMM YYYY">{props.comment.created_at}</Moment>
       </li>
       <Voting
         user={props.user}

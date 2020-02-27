@@ -3,6 +3,7 @@ import { getArticleByID } from "../../api";
 import ErrorComponent from "../ErrorComponent";
 import CommentList from "../Comments/CommentList";
 import Loading from "../Loading";
+import Moment from "react-moment";
 
 class SingleArticle extends React.Component {
   state = { article: null, err: null, isLoading: true };
@@ -16,7 +17,7 @@ class SingleArticle extends React.Component {
           <h3>{article.title}</h3>
           <p>{article.body}</p>
           <p>Author: {article.author}</p>
-          <p>Date: {article.created_at}</p>
+          <Moment format="D MMM YYYY">{article.created_at}</Moment>
           <CommentList user={this.props.user} article_id={article.article_id} />
         </div>
       );

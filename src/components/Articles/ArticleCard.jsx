@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "@reach/router";
 import styles from "../../css-styling/ArticleCard.module.css";
 import { FaHeart } from "react-icons/fa";
+import Moment from "react-moment";
 
 const ArticleCard = props => {
   return (
@@ -18,7 +19,7 @@ const ArticleCard = props => {
           <br></br>
           in {props.article.topic}
           <br></br>
-          Date: {props.article.created_at}
+          <Moment format="D MMM YYYY">{props.article.created_at}</Moment>
           <br></br>
           <FaHeart /> {props.article.votes}
         </p>
