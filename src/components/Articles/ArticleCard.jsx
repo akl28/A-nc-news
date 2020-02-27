@@ -6,7 +6,7 @@ import { FaHeart } from "react-icons/fa";
 const ArticleCard = props => {
   return (
     <article className={styles.article_card}>
-      <p>
+      <main>
         <Link
           style={{ textDecoration: "none" }}
           to={`/articles/id/${props.article.article_id}`}
@@ -22,7 +22,7 @@ const ArticleCard = props => {
           <br></br>
           <FaHeart /> {props.article.votes}
         </p>
-      </p>
+      </main>
     </article>
   );
 };

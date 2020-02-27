@@ -3,6 +3,7 @@ import * as api from "../../api";
 import ArticleCard from "./ArticleCard";
 import Sorting from "../Sorting";
 import styles from "../../css-styling/ArticleList.module.css";
+import Loading from "../Loading";
 
 class ArticlesList extends React.Component {
   state = {
@@ -13,18 +14,18 @@ class ArticlesList extends React.Component {
     err: null
   };
   render() {
-    // console.log(this.props, "<<<");
-    if (this.state.isLoading) return <p>Loading...</p>;
-    return (
-      <div>
-        <Sorting sortArticles={this.sortArticles} />
-        <ul className={styles.eachArticle}>
-          {this.state.articles.map(article => {
-            return <ArticleCard key={article.article_id} article={article} />;
-          })}
-        </ul>
-      </div>
-    );
+    if (this.state.isLoading) return <Loading />;
+    else
+      return (
+        <div>
+          <Sorting sortArticles={this.sortArticles} />
+          <ul className={styles.eachArticle}>
+            {this.state.articles.map(article => {
+              return <ArticleCard key={article.article_id} article={article} />;
+            })}
+          </ul>
+        </div>
+      );
   }
 
   sortArticles = (sort_by, order) => {

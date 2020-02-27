@@ -4,12 +4,12 @@ import CommentCard from "./CommentCard";
 import * as api from "../../api";
 import { getCommentsByArticleID } from "../../api";
 import NewComment from "../Comments/NewComment";
+import Loading from "../Loading";
 
 class CommentList extends React.Component {
   state = { comments: [], err: null, isLoading: true };
   render() {
-    // console.log(this.props);
-    if (this.state.isLoading) return <p>Loading...</p>;
+    if (this.state.isLoading) return <Loading />;
     const { comments } = this.state;
     return (
       <section>

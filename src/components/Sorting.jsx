@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "../css-styling/Sorting.module.css";
 
 class Sorting extends React.Component {
   state = {
@@ -8,9 +9,10 @@ class Sorting extends React.Component {
   render() {
     return (
       <section>
-        <form>
+        <form className={styles.order}>
           <label>Order: </label>
           <select
+            className={styles.selectOrder}
             onChange={({ target: { value } }) =>
               this.setState({ order: value })
             }
@@ -19,9 +21,10 @@ class Sorting extends React.Component {
             <option value="asc">Ascending</option>
           </select>
         </form>
-        <form>
+        <form className={styles.sort}>
           <label>Sort by: </label>
           <select
+            className={styles.selectSort}
             onChange={({ target: { value } }) =>
               this.setState({ sort_by: value })
             }

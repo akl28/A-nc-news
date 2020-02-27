@@ -7,7 +7,14 @@ const NavBar = ({ user, users, selectUser }) => {
     <main>
       <nav className={styles.navbar}>
         <ul className={styles.ul}>
-          <p className={styles.title}>COSMIC NEWS</p>
+          <Link
+            className={styles.title}
+            style={{ textDecoration: "none" }}
+            to="/"
+          >
+            {" "}
+            COSMIC NEWS
+          </Link>
           <img
             src="http://clipart-library.com/images/ziXobeE7T.png"
             height="42"
@@ -38,13 +45,19 @@ const NavBar = ({ user, users, selectUser }) => {
           </li>
         </ul>
       </nav>
-      <section>
-        <p>Logged in: {user}</p>
+      <section className={styles.login}>
+        <p>
+          Logged in as
+          <span className={styles.user}> {user}</span>
+        </p>
         <p>
           Select User:
-          <select onChange={({ target: { value } }) => selectUser(value)}>
+          <select
+            onChange={({ target: { value } }) => selectUser(value)}
+            className={styles.select}
+          >
             {users.map(user => {
-              return <option key={user}>{user}</option>;
+              return <option key={user}> {user}</option>;
             })}
           </select>
         </p>

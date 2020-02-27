@@ -1,0 +1,28 @@
+.order {
+  text-align: left;
+  font-family: "Lato", sans-serif;
+  display: inline;
+}
+
+.sort {
+  text-align: left;
+  font-family: "Lato", sans-serif;
+  display: inline;
+}
+
+.selectOrder {
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  height: 30px;
+  width: 140px;
+  margin-right: 10px;
+  background-color: white;
+}
+
+.selectSort {
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  height: 30px;
+  width: 140px;
+  background-color: white;
+}

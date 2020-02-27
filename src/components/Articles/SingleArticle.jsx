@@ -2,13 +2,14 @@ import React from "react";
 import { getArticleByID } from "../../api";
 import ErrorComponent from "../ErrorComponent";
 import CommentList from "../Comments/CommentList";
+import Loading from "../Loading";
 
 class SingleArticle extends React.Component {
   state = { article: null, err: null, isLoading: true };
   render() {
     const { article } = this.state;
     if (this.state.err) return <ErrorComponent err={this.state.err} />;
-    else if (this.state.isLoading) return <p>Loading</p>;
+    else if (this.state.isLoading) return <Loading />;
     else
       return (
         <div>
