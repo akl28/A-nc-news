@@ -2,6 +2,7 @@ import React from "react";
 import * as api from "../api";
 import { FiArrowDownCircle, FiArrowUpCircle } from "react-icons/fi";
 import { FaHeart } from "react-icons/fa";
+import styles from "../css-styling/Voting.module.css";
 
 class Voting extends React.Component {
   state = { voteChange: 0, err: null };
@@ -10,13 +11,21 @@ class Voting extends React.Component {
     const { votes } = this.props;
     return (
       <section>
-        <p>
-          <FaHeart /> {votes + voteChange}
+        <p style={{ color: "black" }}>
+          <FaHeart size={20} /> {votes + voteChange}
         </p>
-        <button onClick={() => this.handleClick(1)} disabled={voteChange > 0}>
+        <button
+          onClick={() => this.handleClick(1)}
+          disabled={voteChange > 0}
+          style={{ color: "#ed4799" }}
+        >
           <FiArrowUpCircle size={25} />
         </button>
-        <button onClick={() => this.handleClick(-1)} disabled={voteChange < 0}>
+        <button
+          onClick={() => this.handleClick(-1)}
+          disabled={voteChange < 0}
+          style={{ color: "#ed4799" }}
+        >
           <FiArrowDownCircle size={25} />
         </button>
       </section>

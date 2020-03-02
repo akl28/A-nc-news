@@ -5,6 +5,7 @@ import CommentList from "../Comments/CommentList";
 import Loading from "../Loading";
 import Moment from "react-moment";
 import styles from "../../css-styling/SingleArticle.module.css";
+import Voting from "../Voting";
 
 class SingleArticle extends React.Component {
   state = { article: null, err: null, isLoading: true };
@@ -16,16 +17,25 @@ class SingleArticle extends React.Component {
       return (
         <div>
           <h3 className={styles.articleTitle}>{article.title}</h3>
-          <p className={styles.articleBody}>
-            {article.body}
-            <br></br>
-            <br></br>
-            <b className={styles.user}>By: {article.author}</b>
-            <br></br>
-            <b className={styles.date}>
-              <Moment format="D MMM YYYY">{article.created_at}</Moment>
-            </b>
-          </p>
+          <section className={styles.articleBody}>
+            <p>
+              {article.body}
+              <br></br>
+              <br></br>
+              <b className={styles.user}>By: {article.author}</b>
+              <br></br>
+              <b className={styles.date}>
+                <Moment format="D MMM YYYY">{article.created_at}</Moment>
+              </b>
+              <br></br>
+            </p>
+            <Voting
+              user={this.props.user}
+              votes={article.votes}
+              article_id={article.article_id}
+            />
+          </section>
+          <br></br>
           <CommentList user={this.props.user} article_id={article.article_id} />
         </div>
       );

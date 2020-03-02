@@ -5,6 +5,8 @@ import * as api from "../../api";
 import { getCommentsByArticleID } from "../../api";
 import NewComment from "../Comments/NewComment";
 import Loading from "../Loading";
+import { FaComment } from "react-icons/fa";
+import styles from "../../css-styling/CommentList.module.css";
 
 class CommentList extends React.Component {
   state = { comments: [], err: null, isLoading: true };
@@ -18,7 +20,10 @@ class CommentList extends React.Component {
           article_id={this.props.article_id}
           addNewComment={this.addNewComment}
         />
-        <h3>Discussion</h3>
+        <h3 className={styles.header}>
+          <FaComment /> Discussion
+        </h3>
+
         <ul>
           {comments.map(comment => {
             return (

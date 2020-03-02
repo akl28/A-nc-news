@@ -6,19 +6,26 @@ class NewComment extends React.Component {
   state = { body: "", err: null };
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Post a comment:
+      <form onSubmit={this.handleSubmit} className={styles.form}>
+        <label className={styles.title}>
+          Join the discussion...
+          <br></br>
+          <br></br>
           <textarea
+            required
+            className={styles.textarea}
             name="comment"
-            cols="80"
-            rows="10"
+            cols="50"
+            rows="6"
             onChange={this.handleChange}
             value={this.state.body}
-            placeholder="Join the discussion..."
+            placeholder="Post a comment here!"
           ></textarea>
         </label>
-        <button type="submit">Submit!</button>
+        <br></br>
+        <button className={styles.submitButton} type="submit">
+          Submit!
+        </button>
       </form>
     );
   }

@@ -2,6 +2,7 @@
   background-color: #f3cc6a;
   width: 100%;
   height: 70px;
+  border-radius: 8px;
 }
 
 .navbar li :hover {
@@ -12,8 +13,8 @@
   float: right;
   padding: 20px;
   list-style-type: none;
-  font-family: "Lato", sans-serif;
-  font-size: inherit;
+  font-family: "Fredoka One";
+  font-size: 20px;
   list-style-position: outside;
   text-transform: uppercase;
   padding-top: 0;

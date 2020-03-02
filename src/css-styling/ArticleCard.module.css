@@ -1,5 +1,5 @@
 .article_card_title {
-  color: #ed4799;
+  color: black;
   font-family: "Lato", sans-serif;
   /* text-transform: uppercase; */
   text-align: center;
@@ -12,10 +12,10 @@
   border-radius: 8px;
   padding: 30px;
   background-color: #ea98a4;
-  height: 250px;
-  width: 60%;
+  height: 275px;
+  width: 65%;
   display: inline-block;
-  margin-right: 20px;
+  margin-right: 80px;
   margin-left: 80px;
   margin-top: 40px;
   top: 50%;

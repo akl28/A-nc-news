@@ -1,0 +1,51 @@
+.form {
+  font-family: "Lato", sans-serif;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #65c8c7;
+  margin-right: 200px;
+  margin-left: 245px;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.title {
+  font-family: "Fredoka One";
+  color: #b45a9f;
+  font-size: 35px;
+}
+
+.textarea {
+  background-color: white;
+  font-size: 18px;
+  width: 75%;
+  color: #000000;
+}
+
+.submitButton {
+  font-size: 18px;
+  display: inline-block;
+  padding: 0.7em 1.5em;
+  border: 0.1em solid #ffffff;
+  margin: 0 0.3em 0.3em 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  color: black;
+  text-align: center;
+  transition: all 0.2s;
+  background-color: #f4cb6a;
+}
+
+.submitButton:hover {
+  color: #000000;
+  background-color: #ed4799;
+}
+
+/* @media all and (max-width:30em) {
+ .submitButton {
+  display:block;
+  margin:0.4em auto;
+ }
+} */
