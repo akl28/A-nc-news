@@ -4,6 +4,7 @@ import ErrorComponent from "../ErrorComponent";
 import CommentList from "../Comments/CommentList";
 import Loading from "../Loading";
 import Moment from "react-moment";
+import styles from "../../css-styling/SingleArticle.module.css";
 
 class SingleArticle extends React.Component {
   state = { article: null, err: null, isLoading: true };
@@ -14,10 +15,17 @@ class SingleArticle extends React.Component {
     else
       return (
         <div>
-          <h3>{article.title}</h3>
-          <p>{article.body}</p>
-          <p>Author: {article.author}</p>
-          <Moment format="D MMM YYYY">{article.created_at}</Moment>
+          <h3 className={styles.articleTitle}>{article.title}</h3>
+          <p className={styles.articleBody}>
+            {article.body}
+            <br></br>
+            <br></br>
+            <b className={styles.user}>By: {article.author}</b>
+            <br></br>
+            <b className={styles.date}>
+              <Moment format="D MMM YYYY">{article.created_at}</Moment>
+            </b>
+          </p>
           <CommentList user={this.props.user} article_id={article.article_id} />
         </div>
       );

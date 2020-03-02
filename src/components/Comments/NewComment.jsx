@@ -1,5 +1,6 @@
 import React from "react";
 import * as api from "../../api";
+import styles from "../../css-styling/NewComment.module.css";
 
 class NewComment extends React.Component {
   state = { body: "", err: null };
