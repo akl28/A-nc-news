@@ -4,8 +4,13 @@ Cosmic News is a social news aggregation, web content rating, and discussion web
 
 Cosmic News has articles which are divided into topics. Each article has user curated ratings and can be up or down voted using the API, if user is logged in. Users can also add comments about an article. Comments can also be up or down voted. A user can add comments and remove any comments which they have added.
 
-Links:
+---
+
+# Links:
+
 Deployed site: https://cosmic-news.netlify.com Back-end repository: https://github.com/akl28/be-nc-newsA Back-end Heroku hosted version: https://anna-nc-news.herokuapp.com/
+
+---
 
 Available Scripts
 In the project directory, you can run:
@@ -39,12 +44,16 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use eject. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-Learn More
+---
+
+#Learn More
 You can learn more in the Create React App documentation.
 
 To learn React, check out the React documentation.
 
-Code Splitting
+---
+
+#Code Splitting
 This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
 Analyzing the Bundle Size
