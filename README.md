@@ -12,7 +12,7 @@ Deployed site: https://cosmic-news.netlify.com Back-end repository: https://gith
 
 ---
 
-# Available Scripts
+## Available Scripts
 
 In the project directory, you can run:
 
@@ -47,7 +47,7 @@ You don’t have to ever use eject. The curated feature set is suitable for smal
 
 ---
 
-# Learn More
+## Learn More
 
 You can learn more in the Create React App documentation.
 
@@ -55,25 +55,25 @@ To learn React, check out the React documentation.
 
 ---
 
-# Code Splitting
+## Code Splitting
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
 
 ---
 
-# Analyzing the Bundle Size
+## Analyzing the Bundle Size
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-# Making a Progressive Web App
+## Making a Progressive Web App
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 
-# Advanced Configuration
+## Advanced Configuration
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-# Deployment
+## Deployment
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
 
