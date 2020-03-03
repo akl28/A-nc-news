@@ -12,7 +12,6 @@ export const getArticles = (topic, author, sort_by, order) => {
       }
     })
     .then(({ data }) => {
-      // console.log(data.articles, "<<");
       return data.articles;
     });
 };

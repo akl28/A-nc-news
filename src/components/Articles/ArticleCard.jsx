@@ -16,9 +16,9 @@ const ArticleCard = props => {
         </Link>
         <p className={styles.articleInfo}>
           By {props.article.author} in {props.article.topic}
-          {/* <br></br> */}
           <br></br>
           <Moment format="D MMM YYYY">{props.article.created_at}</Moment>
+          <br></br>
           <br></br>
           <FaComment /> {props.article.comment_count}
           <br></br>

@@ -23,7 +23,6 @@ class App extends React.Component {
     return (
       <div>
         <NavBar selectUser={this.selectUser} user={user} users={users} />
-        {/* <Header /> */}
         <Router>
           <Homepage path="/" />
           <TopicsPage path="/articles/:topic" />
@@ -36,5 +35,3 @@ class App extends React.Component {
 }
 
 export default App;
-
-//  <ErrorComponent default />;

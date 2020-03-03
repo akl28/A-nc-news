@@ -1,12 +1,22 @@
 import React from "react";
+import styles from "../css-styling/ErrorPage.module.css";
+import donut from "../css-styling/images/donut2.jpg";
 
 const ErrorComponent = ({ err }) => {
-  // err has msg key and status
+  const img = (
+    <img
+      style={{ height: "200px", width: "200px" }}
+      src={donut}
+      alt="404 not found"
+    ></img>
+  );
   return (
-    <section>
-      <p>Oops</p>
-      <p>{err ? err.data.msg : "oops"}</p>
-      <p>{err ? err.status : "500"}</p>
+    <section className={styles.errorPage}>
+      <p>Oops! Something's missing...</p>
+      {img}
+      <p>
+        {err ? err.data.msg : ""} - {err ? err.status : "500"}
+      </p>
     </section>
   );
 };

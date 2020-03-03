@@ -8,7 +8,9 @@ Cosmic News has articles which are divided into topics. Each article has user cu
 
 ## Links:
 
-Deployed site: https://cosmic-news.netlify.com Back-end repository: https://github.com/akl28/be-nc-newsA Back-end Heroku hosted version: https://anna-nc-news.herokuapp.com/
+Deployed site: https://cosmic-news.netlify.com
+Back-end repository: https://github.com/akl28/be-nc-newsA
+Back-end Heroku hosted version: https://anna-nc-news.herokuapp.com/
 
 ---
 

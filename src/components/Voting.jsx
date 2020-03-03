@@ -2,7 +2,6 @@ import React from "react";
 import * as api from "../api";
 import { FiArrowDownCircle, FiArrowUpCircle } from "react-icons/fi";
 import { FaHeart } from "react-icons/fa";
-import styles from "../css-styling/Voting.module.css";
 
 class Voting extends React.Component {
   state = { voteChange: 0, err: null };
